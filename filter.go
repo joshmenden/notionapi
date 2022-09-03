@@ -46,6 +46,7 @@ func (f TimestampFilter) filter() {}
 
 type PropertyFilter struct {
 	Property    string                      `json:"property"`
+	Title       *TitleFilterCondition       `json:"title,omitempty"`
 	RichText    *TextFilterCondition        `json:"rich_text,omitempty"`
 	Number      *NumberFilterCondition      `json:"number,omitempty"`
 	Checkbox    *CheckboxFilterCondition    `json:"checkbox,omitempty"`
@@ -60,6 +61,17 @@ type PropertyFilter struct {
 }
 
 func (f PropertyFilter) filter() {}
+
+type TitleFilterCondition struct {
+	Equals         string `json:"equals,omitempty"`
+	DoesNotEqual   string `json:"does_not_equal,omitempty"`
+	Contains       string `json:"contains,omitempty"`
+	DoesNotContain string `json:"does_not_contain,omitempty"`
+	StartsWith     string `json:"starts_with,omitempty"`
+	EndsWith       string `json:"ends_with,omitempty"`
+	IsEmpty        bool   `json:"is_empty,omitempty"`
+	IsNotEmpty     bool   `json:"is_not_empty,omitempty"`
+}
 
 type TextFilterCondition struct {
 	Equals         string `json:"equals,omitempty"`
