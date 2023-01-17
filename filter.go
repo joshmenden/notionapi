@@ -58,6 +58,7 @@ type PropertyFilter struct {
 	Formula     *FormulaFilterCondition     `json:"formula,omitempty"`
 	Rollup      *RollupFilterCondition      `json:"rollup,omitempty"`
 	Status      *StatusFilterCondition      `json:"status,omitempty"`
+	Value       *string                     `json:"value,omitempty"`
 }
 
 func (f PropertyFilter) filter() {}
