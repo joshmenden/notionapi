@@ -63,6 +63,13 @@ type PropertyFilter struct {
 
 func (f PropertyFilter) filter() {}
 
+type SearchFilter struct {
+	Value    string `json:"value"`
+	Property string `json:"property"`
+}
+
+func (f SearchFilter) filter() {}
+
 type TextFilterCondition struct {
 	Equals         string `json:"equals,omitempty"`
 	DoesNotEqual   string `json:"does_not_equal,omitempty"`
